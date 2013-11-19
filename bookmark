@@ -3,6 +3,6 @@ javascript: (
 		var jsCode = document.createElement('script'); 
 		jsCode.setAttribute('id', 'plugedd-js'); 
 		jsCode.setAttribute('src', 
-		'https://raw.github.com/Eddyjim/Plugeed/master/plugbot.js'); 
+		'https://raw.github.com/Eddyjim/Plugedd/master/plugedd.js'); 
 		document.body.appendChild(jsCode); 
 	}());
