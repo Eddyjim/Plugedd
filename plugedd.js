@@ -217,7 +217,7 @@ $('body').prepend('<style type="text/css" id="plugged-css">'+
 					'}#plugged-text { '+
 						'width: auto; '+
 						'font-size: 16px; '+
-						'font-weight: bold; }'+
+						'font-weight: bold; }'
 					);
 
 
