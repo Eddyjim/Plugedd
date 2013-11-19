@@ -59,25 +59,6 @@ function initAPIListeners()
    */
   API.on(API.DJ_ADVANCE, djAdvanced);
 
-  /*
-   * This listens for changes in the waiting list
-   */
-  API.on(API.WAIT_LIST_UPDATE, queueUpdate);
-
-  /*
-   * This listens for changes in the dj booth
-   */
-  API.on(API.DJ_UPDATE, queueUpdate);
-
-//  /*
-//   * This listens for whenever a user in the room either WOOT!s or Mehs the current song.
-//   */
-//  API.on(API.VOTE_UPDATE, function (obj) {
-//    if (userList) {
-//      populateUserlist();
-//    }
-//  });
-
 }
 
 
