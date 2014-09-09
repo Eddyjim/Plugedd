@@ -107,7 +107,7 @@ function initUIListeners()
     $(this).css('color', autowoot ? BUTTON_ON : BUTTON_OFF);
 
     if (autowoot) {
-      $('#woot').click();
+      $('#woot').find('.top').click();
     }
 
     jaaulde.utils.cookies.set(COOKIE_WOOT, autowoot);
@@ -212,7 +212,7 @@ function onCookiesLoaded()
    * Hit the woot button, if autowoot is enabled.
    */
   if (autowoot) {
-    $('#woot').click();
+	  $('#woot').find('.top').click();
   }
   
   /*
