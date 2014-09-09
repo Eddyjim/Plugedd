@@ -59,6 +59,7 @@ function initAPIListeners()
    */
   API.on(API.DJ_ADVANCE, djAdvanced);
 
+
 }
 
 
@@ -123,7 +124,7 @@ function initUIListeners()
 function djAdvanced(obj)
 {
   if (autowoot) {
-    $('#woot').click();
+    $('#woot').find('.top').click();
   }
 
 }
