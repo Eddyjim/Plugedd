@@ -8,7 +8,7 @@ function getFirstSelectBox(){
 	
 	/*ui-selectmenu-value*/
 	
-	var x = document.getElementsByClassName("ui-select-data ui-selectmenu-value");
+	var x = document.getElementsByClassName("ui-selectmenu-value");
 	var i;
 	
 	/*x[0].click();*/
