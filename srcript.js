@@ -12,7 +12,7 @@ function getFirstSelectBox(){
 	var i;
 	console.log("entered")
 	/*x[0].click();*/
-	for ( i = 0 ; i < x.lenght; i++){
+	for ( i = 0 ; i < x.length; i++){
 		x[i].click();
 	}
 }
