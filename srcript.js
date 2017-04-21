@@ -8,11 +8,12 @@ function getFirstSelectBox(){
 	
 	/*ui-selectmenu-value*/
 	
-	var x = document.getElementsByClassName("ui-bizagi-render-control");
+	var x = document.getElementsByClassName("ui-selectmenu");
 	var i;
-	console.log("entered")
+	
 	/*x[0].click();*/
-	for ( i = 0 ; i < x.length; i++){
+	for ( i = 0 ; i < x.length ; i++){
 		x[i].click();
+		console.log("Position: "+i);
 	}
 }
