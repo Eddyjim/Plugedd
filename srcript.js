@@ -11,9 +11,9 @@ function getFirstSelectBox(){
 	var x = document.getElementsByClassName("ui-selectmenu-value");
 	var i;
 	
-	/*x[0].click();*/
-	for ( i = 0 ; i < x.length ; i++){
+	x[0].click();
+	/*for ( i = 0 ; i < x.length ; i++){
 		x[i].click();
 		console.log("Position: "+i);
-	}
+	}*/
 }
