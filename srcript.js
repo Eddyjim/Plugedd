@@ -4,22 +4,19 @@ console.log(path);
 
 getFirstSelectBox();
 
+$(".process").click(function(){
+		console.log("executed");
+		var x = document.getElementsByClassName("ui-selectmenu-value");
+		var i;
+		x[0].click();
+	});
+
 function getFirstSelectBox(){
 	
 	/*ui-selectmenu-value*/
 	
 	
 	
-	$(".process").click(function(){
-		console.log("executed");
-		var x = document.getElementsByClassName("ui-selectmenu-value");
-		var i;
-		x[0].click();
-	});
 	
 	
-	/*for ( i = 0 ; i < x.length ; i++){
-		x[i].click();
-		console.log("Position: "+i);
-	}*/
 }
