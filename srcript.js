@@ -10,7 +10,7 @@ function getFirstSelectBox(){
 	
 	
 	
-	$(document).on(".process", "click", function(){
+	$(".process").click(function(){
 		console.log("executed");
 		var x = document.getElementsByClassName("ui-selectmenu-value");
 		var i;
