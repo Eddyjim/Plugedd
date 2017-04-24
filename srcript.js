@@ -11,6 +11,7 @@ function getFirstSelectBox(){
 	
 	
 	$(document).on(".process", "click", function(){
+		console.log("executed");
 		var x = document.getElementsByClassName("ui-selectmenu-value");
 		var i;
 		x[0].click();
