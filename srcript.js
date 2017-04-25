@@ -14,7 +14,7 @@ $("#menuListNew").children('a')[0].click(function(){
 	newCaseListener();
 });
 
-function newCaseListener(){}
+function newCaseListener(){
 	$(".process").click(function(){
 		console.log("executed append");
 		getFirstSelectBox();
