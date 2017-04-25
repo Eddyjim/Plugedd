@@ -7,11 +7,19 @@ console.log(path);
 $(".process").click(function(){
 		console.log("executed append");
 		getFirstSelectBox();
-	});
+});
+
+var processes = document.getElementsByClassName("process");
+
+for (i = 0; i < processes.length ; i++){
+	processes[i].onclick = function(){
+		console.log("executed append");
+		getFirstSelectBox();
+	}
+}
 
 function getFirstSelectBox(){
 	
-	/*ui-selectmenu-value*/
 	var x = document.getElementsByClassName("ui-selectmenu-value");
 	var i;
 	x[0].click();
