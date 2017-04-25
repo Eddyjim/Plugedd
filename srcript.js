@@ -4,17 +4,17 @@ console.log(path);
 
 //getFirstSelectBox();
 
-document.getElementById("menuListNew").onclick = function(){
+/*document.getElementById("menuListNew").onclick = function(){
 	console.log("menu listener");
 	newCaseListener();
-}
+}*/
 
 $("#menuListNew").children('a')[0].click(function(){
 	console.log("menu listener");
 	newCaseListener();
 });
 
-function newCaseListener(){
+function newCaseListener(){	
 	$(".process").click(function(){
 		console.log("executed append");
 		getFirstSelectBox();
