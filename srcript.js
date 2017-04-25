@@ -11,7 +11,7 @@ console.log(path);
 
 $("#menuListNew").children('a')[0].addEventListener('click',function(){
 	console.log("menu listener");
-	when().then(newCaseListener);
+	$.when().then(newCaseListener);
 },false);
 
 function newCaseListener(){	
