@@ -8,11 +8,11 @@ console.log(path);
 	console.log("menu listener");
 	newCaseListener();
 }*/
-$("#menuListNew").children('a')[0].click(function(){
+$("#menuListNew").children('a')[0].addEventListener('click',function(){
 
 	console.log("menu listener");
 	newCaseListener();
-});
+},false);
 
 function newCaseListener(){	
 	$(".process").click(function(){
