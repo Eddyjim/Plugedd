@@ -15,10 +15,10 @@ $("#menuListNew").children('a')[0].addEventListener('click',function(){
 },false);
 
 function newCaseListener(){	
-	$(".process").click(function(){
+	$(".process").addEventListener('click',function(){
 		console.log("executed append");
 		getFirstSelectBox();
-	});
+	},false);
 }
 var processes = document.getElementsByClassName("process");
 
@@ -31,7 +31,7 @@ for (i = 0; i < processes.length ; i++){
 
 function getFirstSelectBox(){
 	
-	var x = document.getElementsByClassName("ui-selectmenu-value");
+	var x = $(".ui-selectmenu-value");
 	var i;
 	x[0].click();
 }
