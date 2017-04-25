@@ -4,11 +4,17 @@ console.log(path);
 
 //getFirstSelectBox();
 
-$(".process").click(function(){
-		console.log("executed append");
-		getFirstSelectBox();
+$("#menuListNew").click(function(){
+	console.log("menu listener");
+	newCaseListener();
 });
 
+function newCaseListener(){}
+	$(".process").click(function(){
+		console.log("executed append");
+		getFirstSelectBox();
+	});
+}
 var processes = document.getElementsByClassName("process");
 
 for (i = 0; i < processes.length ; i++){
