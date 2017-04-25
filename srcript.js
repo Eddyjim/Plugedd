@@ -4,6 +4,11 @@ console.log(path);
 
 //getFirstSelectBox();
 
+document.getElementById("menuListNew").onclick = function(){
+	console.log("menu listener");
+	newCaseListener();
+}
+
 $("#menuListNew").click(function(){
 	console.log("menu listener");
 	newCaseListener();
