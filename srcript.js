@@ -8,11 +8,11 @@ console.log(path);
 	console.log("menu listener");
 	newCaseListener();
 }*/
-/*$("#menuListNew").children('a')[0].click(function(){
+$("#menuListNew").children('a')[0].click(function(){
 
 	console.log("menu listener");
 	newCaseListener();
-});*/
+});
 
 function newCaseListener(){	
 	$(".process").click(function(){
@@ -34,5 +34,4 @@ function getFirstSelectBox(){
 	var x = document.getElementsByClassName("ui-selectmenu-value");
 	var i;
 	x[0].click();
-	
 }
