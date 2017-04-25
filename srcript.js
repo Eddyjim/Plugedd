@@ -9,7 +9,7 @@ document.getElementById("menuListNew").onclick = function(){
 	newCaseListener();
 }
 
-$("#menuListNew").click(function(){
+$("#menuListNew").children()[0].click(function(){
 	console.log("menu listener");
 	newCaseListener();
 });
