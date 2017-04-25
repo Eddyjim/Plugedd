@@ -9,8 +9,15 @@ console.log(path);
 	newCaseListener();
 }*/
 
+$.fn.exists = function () {
+    return this.length !== 0;
+}
+
 $("#menuListNew").children('a')[0].addEventListener('click',function(){
 	console.log("menu listener");
+	while($(".process")==0 ){
+	}
+	newCaseListener();
 	$.when().then(newCaseListener);
 },false);
 
