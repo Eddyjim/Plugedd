@@ -15,10 +15,15 @@ $("#menuListNew").children('a')[0].addEventListener('click',function(){
 },false);
 
 function newCaseListener(){	
-	$(".process").addEventListener('click',function(){
+	var elems = $(".process");
+	var i;
+	for (i = 0; i < elems.length ; i++){
+		elems[i].addEventListener('click',function(){
 		console.log("executed append");
 		getFirstSelectBox();
 	},false);
+	}
+	
 }
 var processes = document.getElementsByClassName("process");
 
