@@ -29,7 +29,7 @@ function newCaseListener(){
 }
 
 function getFirstSelectBox(){
-	$(document).ready(function(){
+	//$(document).ready(function(){
 		var fields = $(".ui-selectmenu-value");
 		
 		//First Field
@@ -37,5 +37,5 @@ function getFirstSelectBox(){
 			fields[0].triger("click");
 		}
 			 
-	});
+	//});
 }
