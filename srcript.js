@@ -29,20 +29,19 @@ function newCaseListener(){
 }
 
 function getFirstSelectBox(){
-		
-		
-		$(document).ajaxComplete( function() {
-			newCaseListener();
-			console.log("Ajax executed 2");
-			clickOnField();
+			
+	$(document).ajaxComplete( function() {
+		newCaseListener();
+		console.log("Ajax executed 2");
+		clickOnField();
 
-		});
+	});
 }
 
 function clickOnField(){
-	var fields = $(".ui-selectmenu-value");
+	var fields = document.getElementsByClassName("ui-selectmenu-value");
 	
 	if (undefined !== fields[0]){
-		fields[0].trigger("click");
+		fields[0].click();
 	}
 }
