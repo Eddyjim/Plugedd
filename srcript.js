@@ -15,6 +15,14 @@ $.fn.exists = function () {
 
 $("#menuListNew").children('a')[0].addEventListener('click',function(){
 	console.log("menu listener");
+	
+
+	$(document).ajaxComplete(function() {
+	newCaseListener();
+	alert("An individual AJAX call has completed successfully");
+	});
+	
+	
 	$.when($(".process").length > 0).then(newCaseListener);
 },false);
 
