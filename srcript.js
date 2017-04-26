@@ -32,9 +32,16 @@ function getFirstSelectBox(){
 	//$(document).ready(function(){
 		var fields = $(".ui-selectmenu-value");
 		
+		$(document).ajaxComplete( function() {
+			newCaseListener();
+			console.log("Ajax executed")
+		
+			if (undefined !== fields[0]){
+				fields[0].trigger("click");
+			}
+		});
+		
 		//First Field
-		if (undefined !== fields[0]){
-			fields[0].triger("click");
-		}	 
+			 
 	//});
 }
