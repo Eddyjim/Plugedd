@@ -47,8 +47,7 @@ for (i = 0; i < processes.length ; i++){
 }
 
 function getFirstSelectBox(){
-	
 	var x = $(".ui-selectmenu-value");
 	var i;
-	x[0].click();
+	x[0].trigger('click');
 }
