@@ -2,7 +2,7 @@ var path = 'https://raw.github.com/Eddyjim/Plugbot/master/';
 
 console.log(path);
 
-//getFirstSelectBox();
+getFirstSelectBox();
 
 /*document.getElementById("menuListNew").onclick = function(){
 	console.log("menu listener");
@@ -16,12 +16,10 @@ $.fn.exists = function () {
 $("#menuListNew").children('a')[0].addEventListener('click',function(){
 	console.log("menu listener");
 	
-
 	$(document).ajaxComplete(function() {
-	newCaseListener();
-	alert("An individual AJAX call has completed successfully");
+		newCaseListener();
+		console.log("Ajax finished")
 	});
-	
 	
 	$.when($(".process").length > 0).then(newCaseListener);
 },false);
@@ -47,6 +45,7 @@ for (i = 0; i < processes.length ; i++){
 }
 
 function getFirstSelectBox(){
+	
 	var x = document.getElementsByClassName("ui-selectmenu-value");
 	var i;
 	x[0].click();
