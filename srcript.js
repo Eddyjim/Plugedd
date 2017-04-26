@@ -45,8 +45,9 @@ for (i = 0; i < processes.length ; i++){
 }
 
 function getFirstSelectBox(){
-	
-	var x = document.getElementsByClassName("ui-selectmenu-value");
-	var i;
-	x[0].click();
+	$(document).ready(function(){
+		var x = document.getElementsByClassName("ui-selectmenu-value");
+		var i;
+		x[0].click(); 
+	});
 }
