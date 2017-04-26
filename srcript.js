@@ -15,11 +15,7 @@ $.fn.exists = function () {
 
 $("#menuListNew").children('a')[0].addEventListener('click',function(){
 	console.log("menu listener");
-	while($(".process").length==0 ){
-		console.log("waiting for processes class");
-	}
-	newCaseListener();
-	$.when().then(newCaseListener);
+	$.when($(".process").length > 0).then(newCaseListener);
 },false);
 
 function newCaseListener(){	
