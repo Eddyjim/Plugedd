@@ -2,7 +2,7 @@ var path = 'https://raw.github.com/Eddyjim/Plugbot/master/';
 
 console.log(path);
 
-getFirstSelectBox();
+clickOnField();
 
 $.fn.exists = function () {
     return this.length !== 0;
@@ -29,19 +29,20 @@ function newCaseListener(){
 }
 
 function getFirstSelectBox(){
-	//$(document).ready(function(){
-		var fields = $(".ui-selectmenu-value");
+		
 		
 		$(document).ajaxComplete( function() {
 			newCaseListener();
-			console.log("Ajax executed")
-		
-			if (undefined !== fields[0]){
-				fields[0].trigger("click");
-			}
+			console.log("Ajax executed 2");
+			clickOnField();
+
 		});
-		
-		//First Field
-			 
-	//});
+}
+
+function clickOnField(){
+	var fields = $(".ui-selectmenu-value");
+	
+	if (undefined !== fields[0]){
+		fields[0].trigger("click");
+	}
 }
