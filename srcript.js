@@ -4,11 +4,6 @@ console.log(path);
 
 getFirstSelectBox();
 
-/*document.getElementById("menuListNew").onclick = function(){
-	console.log("menu listener");
-	newCaseListener();
-}*/
-
 $.fn.exists = function () {
     return this.length !== 0;
 }
@@ -16,12 +11,10 @@ $.fn.exists = function () {
 $("#menuListNew").children('a')[0].addEventListener('click',function(){
 	console.log("menu listener");
 	
-	$(document).ajaxComplete(function() {
+	$(document).ajaxComplete( function() {
 		newCaseListener();
-		console.log("Ajax finished")
+		console.log("Ajax executed")
 	});
-	
-	$.when($(".process").length > 0).then(newCaseListener);
 },false);
 
 function newCaseListener(){	
@@ -29,25 +22,20 @@ function newCaseListener(){
 	var i;
 	for (i = 0; i < elems.length ; i++){
 		elems[i].addEventListener('click',function(){
-		console.log("executed append");
-		getFirstSelectBox();
-	},false);
-	}
-	
-}
-var processes = document.getElementsByClassName("process");
-
-for (i = 0; i < processes.length ; i++){
-	processes[i].onclick = function(){
-		console.log("executed append");
-		getFirstSelectBox();
+			console.log("executed append");
+			getFirstSelectBox();
+		},false);
 	}
 }
 
 function getFirstSelectBox(){
 	$(document).ready(function(){
-		var x = document.getElementsByClassName("ui-selectmenu-value");
-		var i;
-		x[0].click(); 
+		var fields = $(".ui-selectmenu-value");
+		
+		//First Field
+		if (fields[0].length > 0){
+			fields[0].triger("click");
+		}
+			 
 	});
 }
