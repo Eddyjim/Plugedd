@@ -33,9 +33,8 @@ function getFirstSelectBox(){
 		var fields = $(".ui-selectmenu-value");
 		
 		//First Field
-		if (fields[0].length > 0){
+		if (undefined !== fields[0]){
 			fields[0].triger("click");
-		}
-			 
+		}	 
 	//});
 }
