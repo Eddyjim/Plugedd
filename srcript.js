@@ -2,7 +2,7 @@ var path = 'https://raw.github.com/Eddyjim/Plugbot/master/';
 
 console.log(path);
 
-clickOnField();
+tabToAddInTable();
 
 $.fn.exists = function () {
     return this.length !== 0;
