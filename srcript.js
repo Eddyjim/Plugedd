@@ -45,3 +45,11 @@ function clickOnField(){
 		fields[0].click();
 	}
 }
+
+function tabToAddInTable(){
+	var buttonss = document.getElementsByClassName("ui-bizagi-grid-buttons");
+	
+	if (undefined !== buttonss[0]){
+		buttonss[0].childNodes[0].click();
+	}	
+}
