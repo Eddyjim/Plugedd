@@ -23,7 +23,7 @@ $(':focus').keydown(function(e) {
     if (code === 9 ){
 		clickNextTable($(":focus").get(0));
 	}
-}
+});
 
 function getNetxtContainer(elem){
 	var aux = elem;
