@@ -44,7 +44,7 @@ function clickNextTable(elem){
 	var nextElem = getNetxtContainer(elem);
 	
 	if (nextElem.find(".ui-bizagi-grid-buttons").length > 0){
-		console.log(("clicking next +");
+		console.log("clicking next +");
 		nextElem.find(".ui-bizagi-grid-buttons").eq(0).eq(0).trigger("click");
 		
 	}
