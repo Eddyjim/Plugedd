@@ -17,7 +17,7 @@ $("#menuListNew").children('a')[0].addEventListener('click',function(){
 	});
 },false);
 
-$('input[name=notes]').keydown(function(e) {
+$(':focus').keydown(function(e) {
     var code = e.keyCode || e.which;
 
     if (code === 9 ){
