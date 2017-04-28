@@ -21,6 +21,7 @@ $(':focus').keydown(function(e) {
     var code = e.keyCode || e.which;
 
     if (code === 9 ){
+		console.log("Tab captured");
 		clickNextTable($(":focus").get(0));
 	}
 });
@@ -30,9 +31,11 @@ function getNetxtContainer(elem){
 	var position;
 	while (!aux.parent().hasClass("ui-bizagi-container-form")){
 		aux = aux.parent();
+		console.log("getting parent");
 	}
 	if (aux.parent().hasClass("ui-bizagi-container-form")){
 		position = aux.index();
+		console.log("next container found!");
 	}
 	return aux.parent().eq(position+1);
 }
@@ -41,7 +44,9 @@ function clickNextTable(elem){
 	var nextElem = getNetxtContainer(elem);
 	
 	if (nextElem.find(".ui-bizagi-grid-buttons").length > 0){
+		console.log(("clicking next +");
 		nextElem.find(".ui-bizagi-grid-buttons").eq(0).eq(0).trigger("click");
+		
 	}
 }
 
