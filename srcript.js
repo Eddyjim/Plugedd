@@ -17,6 +17,34 @@ $("#menuListNew").children('a')[0].addEventListener('click',function(){
 	});
 },false);
 
+$('input[name=notes]').keydown(function(e) {
+    var code = e.keyCode || e.which;
+
+    if (code === 9 ){
+		clickNextTable($(":focus").get(0));
+	}
+}
+
+function getNetxtContainer(elem){
+	var aux = elem;
+	var position;
+	while (!aux.parent().hasClass("ui-bizagi-container-form")){
+		aux = aux.parent();
+	}
+	if (aux.parent().hasClass("ui-bizagi-container-form")){
+		position = aux.index();
+	}
+	return aux.parent().eq(position+1);
+}
+
+function clickNextTable(elem){
+	var nextElem = getNetxtContainer(elem);
+	
+	if (nextElem.find(".ui-bizagi-grid-buttons").length > 0){
+		nextElem.find(".ui-bizagi-grid-buttons").eq(0).eq(0).trigger("click");
+	}
+}
+
 function newCaseListener(){	
 	var elems = $(".process");
 	var i;
@@ -51,5 +79,7 @@ function tabToAddInTable(){
 	
 	if (undefined !== buttonss[0]){
 		buttonss[0].children[0].children[0].click();
-	}	
+	}
+	
 }
+
