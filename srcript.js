@@ -43,14 +43,17 @@ function clickNextTable(elem){
 }
 
 function newCaseListener(){	
-	var elems = $(".process");
-	var i;
+	$(".process").click(function(){
+		console.log("executed append");
+		getFirstSelectBox();
+	});
+	/*var i;
 	for (i = 0; i < elems.length ; i++){
 		elems[i].addEventListener('click',function(){
 			console.log("executed append");
 			getFirstSelectBox();
 		},false);
-	}
+	}*/
 }
 
 function getDashboard(){
