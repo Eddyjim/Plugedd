@@ -1,9 +1,7 @@
 var path = 'https://raw.github.com/Eddyjim/Plugbot/master/';
 
 console.log(path);
-
 tabToAddInTable();
-
 
 $.fn.exists = function () {
     return this.length !== 0;
@@ -57,7 +55,41 @@ function newCaseListener(){
 }
 
 function getDashboard(){
+	var dashboard = $("#ui-bizagi-wp-project-plan-content-dashboard")[0];
 	
+	//ui-bizagi-render
+	var grid = $($($(dashboard).find(".ui-bizagi-grid-wrapper").parent()).parent()).parent();
+	var gridParent = $(grid).parent();
+	var parentChilds = $(gridParent).children().length;
+	var lastInputBefore;
+	var inputsCounts;
+	
+	//If the inmeditate parent has another children
+	if (parentChilds > 1){
+		inputsCounts = $($(gridParent).eq(0)).find("input").length;
+		//Find last input before the grid
+		lastInputBefore = $($($(gridParent).eq(0)).find("input")[inputsCounts-1]);
+	} else{
+		//Get inmediate parent as grid root
+		grid = $(grid).parent();
+		gridParent = $(grid).parent();
+		//Get the index of the grid to the relative parent
+		var gridIndexToParent = $(gridParent).index(grid);
+		
+		if ($($(grid).parent()).length > 1 && gridIndexToParent != 0){
+			inputsCounts = $(gridParent).find("input").length;
+			lastInputBefore = $($($(gridParent).eq(0)).find("input")[inputsCounts-1]);
+		}
+	}
+		
+	$(lastInputBefore).on('keydown', function(e) { 
+		var keyCode = e.keyCode || e.which; 
+
+		if (keyCode == 9) { 
+			e.preventDefault(); 
+			$($(grid).find(".ui-bizagi-grid-buttons")[0]).trigger("click");
+		} 
+	});
 	
 }
 
