@@ -62,7 +62,7 @@ function getFirstSelectBox(){
 	$(document).ajaxComplete( function() {
 		newCaseListener();
 		console.log("Ajax executed 2");
-		$("#ui-bizagi-wp-project-plan-content-dashboard")[0].find(".ui-bizagi-container-form").find("input").get[0].trigger("click");
+		$($($("#ui-bizagi-wp-project-plan-content-dashboard")[0]).find(".ui-bizagi-container-form").find("input")[0]).trigger("click");
 		//clickOnField();
 	});
 }
