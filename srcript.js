@@ -4,6 +4,11 @@ console.log(path);
 
 tabToAddInTable();
 
+document.getElementById("menuListNew").onclick = function(){
+	console.log("menu listener");
+	newCaseListener();
+}
+
 $.fn.exists = function () {
     return this.length !== 0;
 }
@@ -37,7 +42,7 @@ function newCaseListener(){
 	for (i = 0; i < elems.length ; i++){
 		elems[i].addEventListener('click',function(){
 			console.log("executed append");
-			//getFirstSelectBox();
+			getFirstSelectBox();
 		},false);
 	}
 }
