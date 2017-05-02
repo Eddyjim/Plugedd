@@ -4,20 +4,18 @@ console.log(path);
 
 tabToAddInTable();
 
-document.getElementById("menuListNew").onclick = function(){
-	console.log("menu listener");
-	newCaseListener();
-}
 
 $.fn.exists = function () {
     return this.length !== 0;
 }
 
 $("#menuListNew").children('a')[0].addEventListener('click',function(){
-    console.log("menu listener");
+    
+	$(document).ajaxComplete(function() {
     newCaseListener();
-    $.when().then(newCaseListener);
-    $.when($(".process").length > 0).then(newCaseListener);
+    console.log("ajax call");
+    });
+
 },false);
 
 

@@ -1,16 +1,16 @@
 diff a/srcript.js b/srcript.js	(rejected hunks)
-@@ -8,14 +8,6 @@
-     return this.length !== 0;
- }
+@@ -15,6 +15,14 @@
  
--$("#menuListNew").children('a')[0].addEventListener('click',function(){
--	console.log("menu listener");
--	
--	$(document).ajaxComplete( function() {
--		newCaseListener();
--		console.log("Ajax executed")
--	});
--},false);
+ $("#menuListNew").children('a')[0].addEventListener('click',function(){
+ 	console.log("menu listener");
++	
++
++	$(document).ajaxComplete(function() {
++	newCaseListener();
++	alert("An individual AJAX call has completed successfully");
++	});
++	
++	
+ 	$.when($(".process").length > 0).then(newCaseListener);
+ },false);
  
- $('.ui-bizagi-container-form').eq($('.ui-bizagi-container-form').find("ui-bizagi-grid-buttons").keydown(function(e) {
-     var code = e.keyCode || e.which;
