@@ -8,16 +8,8 @@ $.fn.exists = function () {
     return this.length !== 0;
 }
 
-$("#menuListNew").children('a')[0].addEventListener('click',function(){
-	console.log("menu listener");
-	
-	$(document).ajaxComplete( function() {
-		newCaseListener();
-		console.log("Ajax executed")
-	});
-},false);
 
-$(':focus').keydown(function(e) {
+$('.ui-bizagi-container-form').eq($('.ui-bizagi-container-form').find("ui-bizagi-grid-buttons").keydown(function(e) {
     var code = e.keyCode || e.which;
 
     if (code === 9 ){
@@ -45,8 +37,7 @@ function clickNextTable(elem){
 	
 	if (nextElem.find(".ui-bizagi-grid-buttons").length > 0){
 		console.log("clicking next +");
-		nextElem.find(".ui-bizagi-grid-buttons").eq(0).eq(0).trigger("click");
-		
+		nextElem.find(".ui-bizagi-grid-buttons").eq(0).eq(0).trigger("click");	
 	}
 }
 
@@ -56,18 +47,22 @@ function newCaseListener(){
 	for (i = 0; i < elems.length ; i++){
 		elems[i].addEventListener('click',function(){
 			console.log("executed append");
-			getFirstSelectBox();
+			//getFirstSelectBox();
 		},false);
 	}
 }
 
+function getDashboard(){
+	
+	
+}
+
 function getFirstSelectBox(){
-			
 	$(document).ajaxComplete( function() {
 		newCaseListener();
 		console.log("Ajax executed 2");
-		clickOnField();
-
+		$("#ui-bizagi-wp-project-plan-content-dashboard").get(0).find(".ui-bizagi-container-form").find("input").get(0).trigger("click");
+		//clickOnField();
 	});
 }
 
@@ -84,7 +79,5 @@ function tabToAddInTable(){
 	
 	if (undefined !== buttonss[0]){
 		buttonss[0].children[0].children[0].click();
-	}
-	
+	}	
 }
-
