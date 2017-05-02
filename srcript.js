@@ -8,16 +8,6 @@ $.fn.exists = function () {
     return this.length !== 0;
 }
 
-
-$('.ui-bizagi-container-form').eq($('.ui-bizagi-container-form').find("ui-bizagi-grid-buttons").keydown(function(e) {
-    var code = e.keyCode || e.which;
-
-    if (code === 9 ){
-		console.log("Tab captured");
-		clickNextTable($(":focus").get(0));
-	}
-});
-
 function getNetxtContainer(elem){
 	var aux = elem;
 	var position;
