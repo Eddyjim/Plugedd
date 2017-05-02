@@ -54,7 +54,7 @@ function newCaseListener(){
 	}*/
 }
 
-function getDashboard(){
+function setTabEvent(){
 	var dashboard = $("#ui-bizagi-wp-project-plan-content-dashboard")[0];
 	
 	//ui-bizagi-render
@@ -98,6 +98,7 @@ function getFirstSelectBox(){
 		newCaseListener();
 		console.log("Ajax executed 2");
 		$($($("#ui-bizagi-wp-project-plan-content-dashboard")[0]).find(".ui-bizagi-container-form").find("input")[0]).trigger("click");
+		setTabEvent();
 		//clickOnField();
 	});
 }
