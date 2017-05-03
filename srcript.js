@@ -105,7 +105,7 @@ function setTabEvent(){
 			if (e.which === 9) { 
 				e.preventDefault(); 
 				console.log("pressed tab");
-				$($(grid).find(".ui-bizagi-grid-buttons")[0]).trigger("click");
+				$($(grid).find(".ui-bizagi-grid-buttons")[0].children[0].children[0]).trigger("click");
 			} 
 		});	
 	}
