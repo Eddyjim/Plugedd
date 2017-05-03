@@ -72,7 +72,7 @@ function setTabEvent(){
 	if (grid.length > 0){
 		console.log("found grid" + grid);
 	
-		var gridParent = $(grid).parent();
+		var gridParent = grid.parent();
 		var parentChilds = gridParent.children().length;
 		console.log("parenChilds: " + parentChilds);
 		var lastInputBefore;
