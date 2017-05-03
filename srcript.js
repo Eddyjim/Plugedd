@@ -99,11 +99,12 @@ function setTabEvent(){
 			}
 		}
 			
-		$(lastInputBefore).on('keydown', function(e) { 
+		$(lastInputBefore).keydown(function(e) { 
 			var keyCode = e.keyCode || e.which; 
 
-			if (keyCode == 9) { 
+			if (e.which === 9) { 
 				e.preventDefault(); 
+				console.log("pressed tab");
 				$($(grid).find(".ui-bizagi-grid-buttons")[0]).trigger("click");
 			} 
 		});	
