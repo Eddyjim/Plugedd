@@ -86,7 +86,7 @@ function setTabEvent(){
 				grid = $(grid).parent();
 				gridParent = $(grid).parent();
 				gridIndexToParent = $(gridParent).index(grid);
-				inputsCounts = $($(gridParent).eq(0)).find("input").length;
+				inputsCounts = $($(gridParent).eq(gridIndexToParent-1)).find("input").length;
 			}
 			console.log("parent with more children than grid");
 			console.log("parent children: "+inputsCounts);
