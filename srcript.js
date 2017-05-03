@@ -68,18 +68,26 @@ function setTabEvent(){
 	var dashboard = $("#ui-bizagi-wp-project-plan-content-dashboard")[0];
 	
 	//ui-bizagi-render
-	var grid = $($($(dashboard).find(".ui-bizagi-grid-wrapper").parent()).parent()).parent();
+	var grid = $(dashboard).find(".ui-bizagi-grid-wrapper").parent().parent().parent().parent();
 	if (grid.length > 0){
 		console.log("found grid");
 	
 		var gridParent = $(grid).parent();
 		var parentChilds = $(gridParent).children().length;
 		var lastInputBefore;
-		var inputsCounts;
+		var inputsCounts = 0;
 		
 		//If the inmeditate parent has another children
 		if (parentChilds > 1){
 			inputsCounts = $($(gridParent).eq(0)).find("input").length;
+			var gridIndexToParent = $(gridParent).index(grid);
+			
+			while (inputsCounts == 0){
+				grid = $(grid).parent();
+				gridParent = $(grid).parent();
+				gridIndexToParent = $(gridParent).index(grid);
+				inputsCounts = $($(gridParent).eq(0)).find("input").length;
+			}
 			console.log("parent with more children than grid");
 			console.log("parent children: "+inputsCounts);
 			//Find last input before the grid
@@ -90,7 +98,7 @@ function setTabEvent(){
 			grid = $(grid).parent();
 			gridParent = $(grid).parent();
 			//Get the index of the grid to the relative parent
-			var gridIndexToParent = $(gridParent).index(grid);
+			
 			
 			if ($($(grid).parent()).length > 1 && gridIndexToParent != 0){
 				inputsCounts = $(gridParent).find("input").length;
