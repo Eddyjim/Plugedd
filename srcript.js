@@ -86,6 +86,7 @@ function setTabEvent(){
 			$($(grid).find(".ui-bizagi-grid-buttons")[0]).eq(0).eq(0).trigger("click");
 		}
 		else if(gridIndexToParent > 0){
+			console.log("needs tab handler");
 			while (inputsCounts == 0){
 				//moving up in the hierachy tree
 				console.log("moving up in tree");
