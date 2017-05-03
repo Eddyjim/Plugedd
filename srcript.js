@@ -72,8 +72,9 @@ function setTabEvent(){
 	if (grid.length > 0){
 		console.log("found grid" + grid);
 	
-		var gridParent = grid.parent();
+		var gridParent = $(grid).parent();
 		var parentChilds = gridParent.children().length;
+		console.log("parenChilds: " + parentChilds);
 		var lastInputBefore;
 		var inputsCounts = 0;
 		
@@ -81,6 +82,7 @@ function setTabEvent(){
 		//if (parentChilds > 1){
 		
 		var gridIndexToParent = gridParent.index(grid);
+		console.log("gridIndexToParent: " + gridIndexToParent);
 		if (gridIndexToParent == 0){
 			console.log("is first element");
 			$(grid.find(".ui-bizagi-grid-buttons")[0]).eq(0).eq(0).trigger("click");
