@@ -64,13 +64,13 @@ function getFirstSelectBox(){
 }
 
 function setTabEvent(){
-	console.out("getting dashboard");
+	console.log("getting dashboard");
 	var dashboard = $("#ui-bizagi-wp-project-plan-content-dashboard")[0];
 	
 	//ui-bizagi-render
 	var grid = $($($(dashboard).find(".ui-bizagi-grid-wrapper").parent()).parent()).parent();
 	if (grid.length > 0){
-		console.out("found grid");
+		console.log("found grid");
 	}
 	var gridParent = $(grid).parent();
 	var parentChilds = $(gridParent).children().length;
@@ -80,7 +80,7 @@ function setTabEvent(){
 	//If the inmeditate parent has another children
 	if (parentChilds > 1){
 		inputsCounts = $($(gridParent).eq(0)).find("input").length;
-		console.out("setting tabs");
+		console.log("setting tabs");
 		//Find last input before the grid
 		lastInputBefore = $($($(gridParent).eq(0)).find("input")[inputsCounts-1]);
 	} else{
