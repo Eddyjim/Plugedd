@@ -54,6 +54,15 @@ function newCaseListener(){
 	}*/
 }
 
+function getFirstSelectBox(){
+	$(document).ajaxComplete( function() {
+		console.log("Ajax executed 2");
+		$($($("#ui-bizagi-wp-project-plan-content-dashboard")[0]).find(".ui-bizagi-container-form").find("input")[0]).trigger("click");
+		setTabEvent();
+		//clickOnField();
+	});
+}
+
 function setTabEvent(){
 	console.out("getting dashboard");
 	var dashboard = $("#ui-bizagi-wp-project-plan-content-dashboard")[0];
@@ -71,7 +80,7 @@ function setTabEvent(){
 	//If the inmeditate parent has another children
 	if (parentChilds > 1){
 		inputsCounts = $($(gridParent).eq(0)).find("input").length;
-		console.out("seting tabs");
+		console.out("setting tabs");
 		//Find last input before the grid
 		lastInputBefore = $($($(gridParent).eq(0)).find("input")[inputsCounts-1]);
 	} else{
@@ -94,18 +103,7 @@ function setTabEvent(){
 			e.preventDefault(); 
 			$($(grid).find(".ui-bizagi-grid-buttons")[0]).trigger("click");
 		} 
-	});
-	
-}
-
-function getFirstSelectBox(){
-	$(document).ajaxComplete( function() {
-		newCaseListener();
-		console.log("Ajax executed 2");
-		$($($("#ui-bizagi-wp-project-plan-content-dashboard")[0]).find(".ui-bizagi-container-form").find("input")[0]).trigger("click");
-		setTabEvent();
-		//clickOnField();
-	});
+	});	
 }
 
 function clickOnField(){
