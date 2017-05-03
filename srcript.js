@@ -78,21 +78,28 @@ function setTabEvent(){
 		var inputsCounts = 0;
 		
 		//If the inmeditate parent has another children
-		if (parentChilds > 1){
-			inputsCounts = $($(gridParent).eq(0)).find("input").length;
-			var gridIndexToParent = $(gridParent).index(grid);
-			
+		//if (parentChilds > 1){
+		
+		var gridIndexToParent = $(gridParent).index(grid);
+		if (gridIndexToParent == 0){
+			console.log("is first element");
+			$($(grid).find(".ui-bizagi-grid-buttons")[0]).eq(0).eq(0).trigger("click");
+		}
+		else if(gridIndexToParent > 0){
 			while (inputsCounts == 0){
+				//moving up in the hierachy tree
+				console.log("moving up in tree");
 				grid = $(grid).parent();
 				gridParent = $(grid).parent();
 				gridIndexToParent = $(gridParent).index(grid);
 				inputsCounts = $($(gridParent).eq(gridIndexToParent-1)).find("input").length;
 			}
-			console.log("parent with more children than grid");
 			console.log("parent children: "+inputsCounts);
 			//Find last input before the grid
-			lastInputBefore = $($($(gridParent).eq(0)).find("input")[inputsCounts-1]);
-		} else{
+			lastInputBefore = $($(gridParent).eq(gridIndexToParent-1)).find("input")[inputsCounts-1];	
+		}
+
+		/*} else{
 			//Get inmediate parent as grid root
 			console.log("parent with only the grid");
 			grid = $(grid).parent();
@@ -106,7 +113,7 @@ function setTabEvent(){
 				lastInputBefore = $($($(gridParent).eq(0)).find("input")[inputsCounts-1]);
 			}
 		}
-			
+			*/	
 		$(lastInputBefore).keydown(function(e) { 
 			var code = e.keyCode || e.which;
 			if (code == '9') { 
@@ -138,5 +145,5 @@ function clickOnField(){
 }
 
 function tabToAddInTable(){
-		$($(".ui-bizagi-grid-buttons")[0]).eq(0).eq(0).trigger("click");
+	$($(".ui-bizagi-grid-buttons")[0]).eq(0).eq(0).trigger("click");
 }
