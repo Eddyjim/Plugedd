@@ -69,6 +69,7 @@ function setTabEvent(){
 	
 	//ui-bizagi-render
 	var grid = $(dashboard).find(".ui-bizagi-grid-wrapper").parent().parent().parent().parent();
+	console.log("grid / must be ui-bizagi-render - " + grid.attr("class");
 	if (grid.length > 0){
 		console.log("found grid" + grid);
 	
