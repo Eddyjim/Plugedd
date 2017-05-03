@@ -72,32 +72,32 @@ function setTabEvent(){
 	if (grid.length > 0){
 		console.log("found grid");
 	
-		var gridParent = $(grid).parent();
-		var parentChilds = $(gridParent).children().length;
+		var gridParent = grid.parent();
+		var parentChilds = gridParent.children().length;
 		var lastInputBefore;
 		var inputsCounts = 0;
 		
 		//If the inmeditate parent has another children
 		//if (parentChilds > 1){
 		
-		var gridIndexToParent = $(gridParent).index(grid);
+		var gridIndexToParent = gridParent.index(grid);
 		if (gridIndexToParent == 0){
 			console.log("is first element");
-			$($(grid).find(".ui-bizagi-grid-buttons")[0]).eq(0).eq(0).trigger("click");
+			grid.find(".ui-bizagi-grid-buttons")[0]).eq(0).eq(0).trigger("click");
 		}
 		else if(gridIndexToParent > 0){
 			console.log("needs tab handler");
 			while (inputsCounts == 0){
 				//moving up in the hierachy tree
 				console.log("moving up in tree");
-				grid = $(grid).parent();
-				gridParent = $(grid).parent();
-				gridIndexToParent = $(gridParent).index(grid);
-				inputsCounts = $($(gridParent).eq(gridIndexToParent-1)).find("input").length;
+				grid = grid.parent();
+				gridParent = grid.parent();
+				gridIndexToParent = gridParent.index(grid);
+				inputsCounts = gridParent.eq(gridIndexToParent-1).find("input").length;
 			}
 			console.log("parent children: "+inputsCounts);
 			//Find last input before the grid
-			lastInputBefore = $($(gridParent).eq(gridIndexToParent-1)).find("input")[inputsCounts-1];	
+			lastInputBefore = gridParent.eq(gridIndexToParent-1).find("input")[inputsCounts-1];	
 		}
 
 		/*} else{
