@@ -80,11 +80,13 @@ function setTabEvent(){
 		//If the inmeditate parent has another children
 		if (parentChilds > 1){
 			inputsCounts = $($(gridParent).eq(0)).find("input").length;
-			console.log("setting tabs");
+			console.log("parent with more children than grid");
+			console.log("parent children: "+inputsCounts);
 			//Find last input before the grid
 			lastInputBefore = $($($(gridParent).eq(0)).find("input")[inputsCounts-1]);
 		} else{
 			//Get inmediate parent as grid root
+			console.log("parent with only the grid");
 			grid = $(grid).parent();
 			gridParent = $(grid).parent();
 			//Get the index of the grid to the relative parent
@@ -92,6 +94,7 @@ function setTabEvent(){
 			
 			if ($($(grid).parent()).length > 1 && gridIndexToParent != 0){
 				inputsCounts = $(gridParent).find("input").length;
+				console.log("parent children: "+inputsCounts);
 				lastInputBefore = $($($(gridParent).eq(0)).find("input")[inputsCounts-1]);
 			}
 		}
