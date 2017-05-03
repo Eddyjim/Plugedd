@@ -83,7 +83,7 @@ function setTabEvent(){
 		var gridIndexToParent = gridParent.index(grid);
 		if (gridIndexToParent == 0){
 			console.log("is first element");
-			grid.find(".ui-bizagi-grid-buttons")[0]).eq(0).eq(0).trigger("click");
+			$(grid.find(".ui-bizagi-grid-buttons")[0]).eq(0).eq(0).trigger("click");
 		}
 		else if(gridIndexToParent > 0){
 			console.log("needs tab handler");
