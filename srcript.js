@@ -112,7 +112,7 @@ function setTabEvent(){
 			if (code == '9') { 
 				e.preventDefault(); 
 				console.log("pressed tab");
-				$(grid).find(".ui-bizagi-grid-buttons")[0].eq(0).eq(0).trigger("click");
+				$($(grid).find(".ui-bizagi-grid-buttons")[0]).eq(0).eq(0).trigger("click");
 			} 
 		});	
 	}
