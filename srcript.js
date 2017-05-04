@@ -75,7 +75,7 @@ function setTabEvent(){
 		var parentChilds = gridParent.children().length;
 		var lastInputBefore;
 		var inputsCounts = 0;		
-		var gridIndexToParent = gridParent.index(grid);	
+		var gridIndexToParent = grid.index();	
 
 		console.log("grid / must be ui-bizagi-render - " + grid.attr("class"));
 		console.log("gridParent / must be ui-bizagi-container-contentpanel-wrapper - " + gridParent.attr("class"));
@@ -93,7 +93,7 @@ function setTabEvent(){
 				console.log("moving up in tree");
 				grid = grid.parent();
 				gridParent = grid.parent();
-				gridIndexToParent = gridParent.index(grid);
+				gridIndexToParent = grid.index();
 				inputsCounts = gridParent.eq(gridIndexToParent-1).find("input").length;
 			}
 			console.log("parent children: "+inputsCounts);
@@ -126,6 +126,8 @@ function setTabEvent(){
 		});	
 	}
 }
+
+
 
 function clickOnField(){
 	
