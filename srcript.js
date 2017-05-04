@@ -90,23 +90,27 @@ function setTabEvent(){
 			gridParent = grid.parent();
 			gridIndexToParent = grid.index();
 			inputsCounts = gridParent.eq(gridIndexToParent-1).find("input").length;
-			
 		}
-			console.log("inputs found: "+inputsCounts);
-			//Find last input before the grid
+		
+		console.log("grid / must be ui-bizagi-render - " + grid.attr("class"));
+		console.log("gridParent / must be ui-bizagi-container-contentpanel-wrapper - " + gridParent.attr("class"));
+		console.log("parenChilds: " + parentChilds);
+		console.log("gridIndexToParent: " + gridIndexToParent + "child class: " + gridParent.children().attr("class"));
+		console.log("inputs found: "+inputsCounts);
+		
+		//Find last input before the grid
 		if (inputsCounts > 0){
-			
+			console.log("inputFound");
 			lastInputBefore = gridParent.eq(gridIndexToParent-1).find("input")[inputsCounts-1];
 			
 			$(lastInputBefore).keydown(function(e) { 
-			var code = e.keyCode || e.which;
-			if (code == '9') { 
-				e.preventDefault(); 
-				console.log("pressed tab");
-				$(grid.find(".ui-bizagi-grid-buttons")[0]).eq(0).eq(0).trigger("click");
-			}
-			
-		});
+				var code = e.keyCode || e.which;
+				if (code == '9') { 
+					e.preventDefault(); 
+					console.log("pressed tab");
+					$(grid.find(".ui-bizagi-grid-buttons")[0]).eq(0).eq(0).trigger("click");
+				}
+			});
 		}else if (inputsCounts == 0){
 				
 		}
