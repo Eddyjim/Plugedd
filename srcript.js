@@ -82,40 +82,21 @@ function setTabEvent(){
 		console.log("parenChilds: " + parentChilds);
 		console.log("gridIndexToParent: " + gridIndexToParent + "child class: " + gridParent.children().attr("class"));
 		
-		if (gridIndexToParent == 0){
-			console.log("is first element");
-			$(grid.find(".ui-bizagi-grid-buttons")[0]).eq(0).eq(0).trigger("click");
+		
+		while (inputsCounts == 0 && !gridParent.hasClass("ui-bizagi-wp-project-plan-content-dashboard")){
+			//moving up in the hierachy tree
+			console.log("moving up in tree");
+			grid = grid.parent();
+			gridParent = grid.parent();
+			gridIndexToParent = grid.index();
+			inputsCounts = gridParent.eq(gridIndexToParent-1).find("input").length;
+			
 		}
-		else if(gridIndexToParent > 0){
-			console.log("needs tab handler");
-			while (inputsCounts == 0){
-				//moving up in the hierachy tree
-				console.log("moving up in tree");
-				grid = grid.parent();
-				gridParent = grid.parent();
-				gridIndexToParent = grid.index();
-				inputsCounts = gridParent.eq(gridIndexToParent-1).find("input").length;
-			}
 			console.log("parent children: "+inputsCounts);
 			//Find last input before the grid
 			lastInputBefore = gridParent.eq(gridIndexToParent-1).find("input")[inputsCounts-1];	
-		}
-
-		/*} else{
-			//Get inmediate parent as grid root
-			console.log("parent with only the grid");
-			grid = $(grid).parent();
-			gridParent = $(grid).parent();
-			//Get the index of the grid to the relative parent
-			
-			
-			if ($($(grid).parent()).length > 1 && gridIndexToParent != 0){
-				inputsCounts = $(gridParent).find("input").length;
-				console.log("parent children: "+inputsCounts);
-				lastInputBefore = $($($(gridParent).eq(0)).find("input")[inputsCounts-1]);
-			}
-		}
-			*/	
+		
+		
 		$(lastInputBefore).keydown(function(e) { 
 			var code = e.keyCode || e.which;
 			if (code == '9') { 
