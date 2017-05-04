@@ -74,6 +74,7 @@ function setTabEvent(){
 		console.log("found grid" + grid);
 	
 		var gridParent = grid.parent();
+		console.log("gridParent / must be ui-bizagi-container-contentpanel-wrapper - " + gridParent.attr("class"));
 		var parentChilds = gridParent.children().length;
 		console.log("parenChilds: " + parentChilds);
 		var lastInputBefore;
@@ -82,7 +83,7 @@ function setTabEvent(){
 		//If the inmeditate parent has another children
 		//if (parentChilds > 1){
 		
-		var gridIndexToParent = gridParent.index(grid);
+		var gridIndexToParent = grid.index(gridParent);	
 		console.log("gridIndexToParent: " + gridIndexToParent);
 		if (gridIndexToParent == 0){
 			console.log("is first element");
@@ -95,7 +96,7 @@ function setTabEvent(){
 				console.log("moving up in tree");
 				grid = grid.parent();
 				gridParent = grid.parent();
-				gridIndexToParent = gridParent.index(grid);
+				gridIndexToParent = grid.index(gridParent);
 				inputsCounts = gridParent.eq(gridIndexToParent-1).find("input").length;
 			}
 			console.log("parent children: "+inputsCounts);
