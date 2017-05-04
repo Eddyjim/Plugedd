@@ -64,27 +64,24 @@ function getFirstSelectBox(){
 }
 
 function setTabEvent(){
-	console.log("getting dashboard");
-	var dashboard = $("#ui-bizagi-wp-project-plan-content-dashboard")[0];
 	
+	var dashboard = $("#ui-bizagi-wp-project-plan-content-dashboard")[0];
 	//ui-bizagi-render
 	var grid = $(dashboard).find(".ui-bizagi-grid-wrapper").parent().parent().parent().parent();
-	console.log("grid / must be ui-bizagi-render - " + grid.attr("class"));
 	if (grid.length > 0){
 		console.log("found grid" + grid);
 	
 		var gridParent = grid.parent();
-		console.log("gridParent / must be ui-bizagi-container-contentpanel-wrapper - " + gridParent.attr("class"));
 		var parentChilds = gridParent.children().length;
-		console.log("parenChilds: " + parentChilds);
 		var lastInputBefore;
-		var inputsCounts = 0;
-		
-		//If the inmeditate parent has another children
-		//if (parentChilds > 1){
-		
-		var gridIndexToParent = grid.index(gridParent);	
+		var inputsCounts = 0;		
+		var gridIndexToParent = gridParent.index(grid);	
+
+		console.log("grid / must be ui-bizagi-render - " + grid.attr("class"));
+		console.log("gridParent / must be ui-bizagi-container-contentpanel-wrapper - " + gridParent.attr("class"));
+		console.log("parenChilds: " + parentChilds);
 		console.log("gridIndexToParent: " + gridIndexToParent);
+		
 		if (gridIndexToParent == 0){
 			console.log("is first element");
 			$(grid.find(".ui-bizagi-grid-buttons")[0]).eq(0).eq(0).trigger("click");
@@ -96,7 +93,7 @@ function setTabEvent(){
 				console.log("moving up in tree");
 				grid = grid.parent();
 				gridParent = grid.parent();
-				gridIndexToParent = grid.index(gridParent);
+				gridIndexToParent = gridParent.index(grid);
 				inputsCounts = gridParent.eq(gridIndexToParent-1).find("input").length;
 			}
 			console.log("parent children: "+inputsCounts);
