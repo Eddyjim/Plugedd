@@ -87,20 +87,23 @@ function setTabEvent(){
 			//moving up in the hierachy tree
 			console.log("moving up in tree");
 			grid = grid.parent();
-			gridParent = grid.parent();
+			gridParent = grid.parent()	;
 			gridIndexToParent = grid.index();
-			inputsCounts = gridParent.eq(gridIndexToParent-1).find("input").length;
+			if(gridIndexToParent > 0){
+				inputsCounts = gridParent.eq(gridIndexToParent-1).find("input").length;
+			}
 		}
 		
-		console.log("grid / must be ui-bizagi-render - " + grid.attr("class"));
-		console.log("gridParent / must be ui-bizagi-container-contentpanel-wrapper - " + gridParent.attr("class"));
+		console.log("grid / must be ui-bizagi-container  ui-bizagi-container-contentpanel - " + grid.attr("class"));
+		console.log("gridParent / must be ui-bizagi-container ui-bizagi-container-form ui-widget-content  ui-bizagi-rendering-mode-execution - " + gridParent.attr("class"));
 		console.log("parenChilds: " + parentChilds);
 		console.log("gridIndexToParent: " + gridIndexToParent + "child class: " + gridParent.children().attr("class"));
 		console.log("inputs found: "+inputsCounts);
 		
 		//Find last input before the grid
 		if (inputsCounts > 0){
-			console.log("inputFound");
+			console.log("input Found");
+			
 			lastInputBefore = gridParent.eq(gridIndexToParent-1).find("input")[inputsCounts-1];
 			
 			$(lastInputBefore).keydown(function(e) { 
