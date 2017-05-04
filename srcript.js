@@ -80,7 +80,7 @@ function setTabEvent(){
 		console.log("grid / must be ui-bizagi-render - " + grid.attr("class"));
 		console.log("gridParent / must be ui-bizagi-container-contentpanel-wrapper - " + gridParent.attr("class"));
 		console.log("parenChilds: " + parentChilds);
-		console.log("gridIndexToParent: " + gridIndexToParent);
+		console.log("gridIndexToParent: " + gridIndexToParent + "child class: " + gridParent.eq(0).attr("class"));
 		
 		if (gridIndexToParent == 0){
 			console.log("is first element");
