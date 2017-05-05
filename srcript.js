@@ -36,7 +36,7 @@ function clickNextTable(elem){
 
 	if (nextElem.find(".ui-bizagi-grid-buttons").length > 0){
 		console.log("clicking next +");
-		nextElem.find(".ui-bizagi-grid-buttons").eq(0).eq(0).trigger("click");	
+		nextElem.find(".ui-bizagi-grid-buttons").eq(0).eq(0).trigger("click");
 	}
 }
 
@@ -70,8 +70,8 @@ function setTabEvent(){
 	var grid = $(dashboard).find(".ui-bizagi-grid-wrapper").parent().parent().parent().parent();
 
 	if (grid.length > 0){
-		console.log("found grid" + grid);
 
+		console.log("found grid" + grid);
 		var gridParent = grid.parent();
 		var lastInputBefore;
 		var inputFoundIndexToParent;
@@ -90,15 +90,17 @@ function setTabEvent(){
 				for (auxIndex = gridIndexToParent-1; auxIndex >= 0 && inputsCounts == 0 ; auxIndex--){
 					inputs =  gridParent.eq(auxIndex).find("input");
 					inputsCounts = inputs.length;
+					console.log("inputsCounts: " + inputsCounts);
 					console.log("auxIndex: " + auxIndex);
 					if (inputsCounts > 0 ){
 						inputFoundIndexToParent = auxIndex;
 						console.log("inputFoundIndexToParent: " + inputFoundIndexToParent);
 					}
 				}
+				console.log("auxIndex: " + auxIndex);
 			}
 		}
-		
+
 		console.log("grid / must be ui-bizagi-container  ui-bizagi-container-contentpanel - " + grid.attr("class"));
 		console.log("gridParent / must be ui-bizagi-container ui-bizagi-container-form ui-widget-content  ui-bizagi-rendering-mode-execution - " + gridParent.attr("class"));
 		console.log("gridIndexToParent: " + gridIndexToParent + "child class: " + gridParent.children().attr("class"));
@@ -107,7 +109,7 @@ function setTabEvent(){
 		//Find last input before the grid
 		if (inputsCounts > 0){
 			console.log("input Found");
-			
+
 			$(inputs[inputsCounts-1]).css("color", "red");
 			lastInputBefore = inputs[inputsCounts-1];
 
