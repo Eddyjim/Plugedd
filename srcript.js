@@ -99,7 +99,6 @@ function setTabEvent(){
 			$(lastInputBefore).keydown(function(e) {
 				var code = e.keyCode || e.which;
 				if (code == '9') {
-					$this.unbind("k")
 					e.preventDefault();
 					console.log('pressed tab');
 					grid.find('.ui-bizagi-grid-buttons').find('li[data-action="add"]').trigger('click');
