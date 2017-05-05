@@ -117,8 +117,8 @@ function setTabEvent(){
 				var code = e.keyCode || e.which;
 				if (code == '9') {
 					e.preventDefault();
-					console.log("pressed tab");
-					grid.find('.ui-bizagi-grid-buttons[data-action="add"]').find("li").trigger("click");
+					console.log('pressed tab');
+					grid.find('.ui-bizagi-grid-buttons').find('li[data-action="add"]').trigger('click');
 				}
 			});
 
