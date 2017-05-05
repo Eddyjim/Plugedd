@@ -88,7 +88,7 @@ function setTabEvent(){
 			if(gridIndexToParent > 0 && inputsCounts == 0){
 				var auxIndex;
 				for (auxIndex = gridIndexToParent-1; auxIndex >= 0 && inputsCounts == 0 ; auxIndex--){
-					inputs =  gridParent.eq(auxIndex).find("input");
+					inputs =  gridParent.children().eq(auxIndex).find("input");
 					inputsCounts = inputs.length;
 					console.log("inputsCounts: " + inputsCounts);
 					console.log("auxIndex: " + auxIndex);
@@ -97,7 +97,7 @@ function setTabEvent(){
 						console.log("inputFoundIndexToParent: " + inputFoundIndexToParent);
 					}
 				}
-				console.log("auxIndex: " + auxIndex);
+				console.log("auxIndex out: " + auxIndex);
 			}
 		}
 
