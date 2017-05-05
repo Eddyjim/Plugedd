@@ -88,11 +88,12 @@ function setTabEvent(){
 			if(gridIndexToParent > 0 && inputsCounts == 0){
 				var auxIndex;
 				for (auxIndex = gridIndexToParent-1; auxIndex >= 0 && inputsCounts == 0 ; auxIndex--){
-					console.log("auxIndex" + auxIndex);
 					inputs =  gridParent.eq(auxIndex).find("input");
 					inputsCounts = inputs.length;
+					console.log("auxIndex: " + auxIndex);
 					if (inputsCounts > 0 ){
 						inputFoundIndexToParent = auxIndex;
+						console.log("inputFoundIndexToParent: " + inputFoundIndexToParent);
 					}
 				}
 			}
