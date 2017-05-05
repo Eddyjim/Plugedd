@@ -109,7 +109,7 @@ function setTabEvent(){
 			console.log("input Found");
 			
 			$(inputs[inputsCounts-1]).css("color", "red");
-			lastInputBefore = gridParent.eq(inputFoundIndexToParent).find("input")[inputsCounts-1];
+			lastInputBefore = inputs[inputsCounts-1];
 
 			$(lastInputBefore).keydown(function(e) {
 				var code = e.keyCode || e.which;
