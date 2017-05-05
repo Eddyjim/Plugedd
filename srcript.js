@@ -73,7 +73,6 @@ function setTabEvent(){
 		console.log("found grid" + grid);
 
 		var gridParent = grid.parent();
-		var parentChilds = gridParent.children().length;
 		var lastInputBefore;
 		var inputFoundIndexToParent;
 		var inputsCounts = 0;
@@ -89,6 +88,7 @@ function setTabEvent(){
 			if(gridIndexToParent > 0 && inputsCounts == 0){
 				var auxIndex;
 				for (auxIndex = gridIndexToParent-1; auxIndex >= 0 && inputsCounts == 0 ; auxIndex--){
+					console.log("auxIndex" + auxIndex);
 					inputs =  gridParent.eq(auxIndex).find("input");
 					inputsCounts = inputs.length;
 					if (inputsCounts > 0 ){
@@ -100,7 +100,6 @@ function setTabEvent(){
 		
 		console.log("grid / must be ui-bizagi-container  ui-bizagi-container-contentpanel - " + grid.attr("class"));
 		console.log("gridParent / must be ui-bizagi-container ui-bizagi-container-form ui-widget-content  ui-bizagi-rendering-mode-execution - " + gridParent.attr("class"));
-		console.log("parenChilds: " + parentChilds);
 		console.log("gridIndexToParent: " + gridIndexToParent + "child class: " + gridParent.children().attr("class"));
 		console.log("inputs found: "+inputsCounts);
 
