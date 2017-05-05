@@ -88,7 +88,7 @@ function setTabEvent(){
 			gridIndexToParent = grid.index();
 			if(gridIndexToParent > 0 && inputsCounts == 0){
 				var auxIndex;
-				for (auxIndex = gridIndexToParent-1; auxIndex >= 0 && inputCounts == 0 ; auxIndex--){
+				for (auxIndex = gridIndexToParent-1; auxIndex >= 0 && inputsCounts == 0 ; auxIndex--){
 					inputs =  gridParent.eq(auxIndex).find("input");
 					inputsCounts = inputs.length;
 					if (inputsCounts > 0 ){
