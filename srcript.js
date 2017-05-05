@@ -108,7 +108,7 @@ function setTabEvent(){
 		if (inputsCounts > 0){
 			console.log("input Found");
 			
-			inputs[inputCounts-1].css("color: red;")
+			inputs[inputsCounts-1].css("color: red;")
 			lastInputBefore = gridParent.eq(gridIndexToParent-1).find("input")[inputsCounts-1];
 
 			$(lastInputBefore).keydown(function(e) {
