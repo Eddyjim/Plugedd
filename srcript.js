@@ -65,7 +65,7 @@ function setTabEvent(){
 		var gridIndexToParent = grid.index();
 		var inputs;
 
-		while (inputsCounts == 0 && !gridParent.hasClass("ui-bizagi-wp-project-plan-content-dashboard") && !gridParent.hasClass("ui-bizagi-wp-project-plan-content-dashboard")){
+		while (inputsCounts == 0 && !gridParent.hasClass("ui-bizagi-wp-project-plan-content-dashboard") && !gridParent.hasClass("ui-dialog")){
 			//moving up in the hierachy tree
 			if(gridIndexToParent > 0){
 				var auxIndex;
