@@ -55,6 +55,7 @@ function setTabEvent(){
 	if (grid.length > 0){
 
 		console.log("found grid" + grid);
+		grid.css("color", "green");
 		var gridParent = grid.parent();
 		var lastInputBefore;
 		var inputFoundIndexToParent;
@@ -65,7 +66,7 @@ function setTabEvent(){
 		while (inputsCounts == 0 && !gridParent.hasClass("ui-bizagi-wp-project-plan-content-dashboard")){
 			//moving up in the hierachy tree
 			console.log("moving up in tree");
-			grid = grid.parent();
+			grid = gridParent;
 			gridParent = grid.parent();
 			gridIndexToParent = grid.index();
 			if(gridIndexToParent > 0 && inputsCounts == 0){
@@ -75,6 +76,7 @@ function setTabEvent(){
 					inputsCounts = inputs.length;
 					console.log("inputsCounts: " + inputsCounts);
 					console.log("auxIndex: " + auxIndex);
+					console.log("containerClass: " + gridParent.children().eq(auxIndex).attr("class"));
 					if (inputsCounts > 0 ){
 						inputFoundIndexToParent = auxIndex;
 						console.log("inputFoundIndexToParent: " + inputFoundIndexToParent);
@@ -83,10 +85,10 @@ function setTabEvent(){
 				console.log("auxIndex out: " + auxIndex);
 			}
 		}
-
+		gridParent.css("border", "red");
 		console.log("grid / must be ui-bizagi-container  ui-bizagi-container-contentpanel - " + grid.attr("class"));
 		console.log("gridParent / must be ui-bizagi-container ui-bizagi-container-form ui-widget-content  ui-bizagi-rendering-mode-execution - " + gridParent.attr("class"));
-		console.log("gridIndexToParent: " + gridIndexToParent + "child class: " + gridParent.children().attr("class"));
+		console.log("gridIndexToParent: " + gridIndexToParent + " child class: " + gridParent.children().attr("class"));
 		console.log("inputs found: "+inputsCounts);
 
 		//Find last input before the grid
