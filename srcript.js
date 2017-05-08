@@ -81,12 +81,13 @@ function setTabEvent(){
 				console.log("auxIndex out: " + auxIndex);
 			}
 			
-			if (inputCounts == 0){
+			if (inputsCounts == 0){
 				console.log("moving up in tree");
 				grid = gridParent;
 				gridParent = grid.parent();
 				gridIndexToParent = grid.index();
 			}
+
 			console.log("grid / must be ui-bizagi-container  ui-bizagi-container-contentpanel - " + grid.attr("class"));
 			console.log("gridParent / must be ui-bizagi-container ui-bizagi-container-form ui-widget-content  ui-bizagi-rendering-mode-execution - " + gridParent.attr("class"));
 			console.log("gridIndexToParent: " + gridIndexToParent + " child class: " + gridParent.children().eq(gridIndexToParent).attr("class"));
