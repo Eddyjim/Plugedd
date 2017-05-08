@@ -86,6 +86,8 @@ function setTabEvent(){
 				grid = gridParent;
 				gridParent = grid.parent();
 				gridIndexToParent = grid.index();
+				grid.css("border-style", "solid");
+				grid.css("border-color", "red");
 			}
 
 			console.log("grid / must be ui-bizagi-container  ui-bizagi-container-contentpanel - " + grid.attr("class"));
