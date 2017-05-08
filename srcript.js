@@ -48,8 +48,10 @@ function getFirstSelectBox(){
 
 function setTabEvent(){
 
-	var dashboard = $("#ui-bizagi-wp-project-plan-content-dashboard")[0];
+	var dashboard = $("#ui-bizagi-wp-project-plan-content-dashboard, .ui-dialog.ui-widget.ui-widget-content")[0];
 	//.ui-bizagi-grid //.ui-bizagi-grid-wrapp	er
+	//ui-dialog ui-widget ui-widget-content
+	
 	var grid = $(dashboard).find(".ui-bizagi-grid");
 
 	if (grid.length > 0){
