@@ -65,10 +65,6 @@ function setTabEvent(){
 
 		while (inputsCounts == 0 && !gridParent.hasClass("ui-bizagi-wp-project-plan-content-dashboard")){
 			//moving up in the hierachy tree
-			console.log("moving up in tree");
-			grid = gridParent;
-			gridParent = grid.parent();
-			gridIndexToParent = grid.index();
 			if(gridIndexToParent > 0 && inputsCounts == 0){
 				var auxIndex;
 				for (auxIndex = gridIndexToParent-1; auxIndex >= 0 && inputsCounts == 0 ; auxIndex--){
@@ -83,12 +79,16 @@ function setTabEvent(){
 					}
 				}
 				console.log("auxIndex out: " + auxIndex);
+			}else if ( gridIndexToParent == 0 && inputCounts == 0){
+				console.log("moving up in tree");
+				grid = gridParent;
+				gridParent = grid.parent();
+				gridIndexToParent = grid.index();
 			}
-		console.log("grid / must be ui-bizagi-container  ui-bizagi-container-contentpanel - " + grid.attr("class"));
-		console.log("gridParent / must be ui-bizagi-container ui-bizagi-container-form ui-widget-content  ui-bizagi-rendering-mode-execution - " + gridParent.attr("class"));
-		console.log("gridIndexToParent: " + gridIndexToParent + " child class: " + gridParent.children().eq(gridIndexToParent).attr("class"));
-		console.log("inputs found: "+inputsCounts);
-
+			console.log("grid / must be ui-bizagi-container  ui-bizagi-container-contentpanel - " + grid.attr("class"));
+			console.log("gridParent / must be ui-bizagi-container ui-bizagi-container-form ui-widget-content  ui-bizagi-rendering-mode-execution - " + gridParent.attr("class"));
+			console.log("gridIndexToParent: " + gridIndexToParent + " child class: " + gridParent.children().eq(gridIndexToParent).attr("class"));
+			console.log("inputs found: "+inputsCounts);
 		}
 		
 		//Find last input before the grid
@@ -109,7 +109,7 @@ function setTabEvent(){
 			});
 
 		}else if (inputsCounts == 0){
-
+			
 		}
 	}
 }
