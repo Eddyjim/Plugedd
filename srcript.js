@@ -49,7 +49,7 @@ function getFirstSelectBox(){
 function setTabEvent(){
 
 	var dashboard = $("#ui-bizagi-wp-project-plan-content-dashboard")[0];
-	//.ui-bizagi-grid //.ui-bizagi-grid-wrapper
+	//.ui-bizagi-grid //.ui-bizagi-grid-wrapp	er
 	var grid = $(dashboard).find(".ui-bizagi-grid");
 
 	if (grid.length > 0){
@@ -68,7 +68,7 @@ function setTabEvent(){
 			if(gridIndexToParent > 0){
 				var auxIndex;
 				for (auxIndex = gridIndexToParent-1; auxIndex >= 0 && inputsCounts == 0 ; auxIndex--){
-					inputs =  gridParent.children().eq(auxIndex).find("input");
+					inputs =  gridParent.children().eq(auxIndex).find("input:text");
 					inputsCounts = inputs.length;
 					console.log("inputsCounts: " + inputsCounts);
 					console.log("auxIndex: " + auxIndex);
