@@ -79,7 +79,7 @@ function setTabEvent(){
 					}
 				}
 				console.log("auxIndex out: " + auxIndex);
-			}else if ( gridIndexToParent == 0 && inputCounts == 0){
+			}else if ( gridIndexToParent == 0 && inputsCounts == 0){
 				console.log("moving up in tree");
 				grid = gridParent;
 				gridParent = grid.parent();
