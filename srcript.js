@@ -88,7 +88,7 @@ function setTabEvent(){
 		gridParent.css("border", "red");
 		console.log("grid / must be ui-bizagi-container  ui-bizagi-container-contentpanel - " + grid.attr("class"));
 		console.log("gridParent / must be ui-bizagi-container ui-bizagi-container-form ui-widget-content  ui-bizagi-rendering-mode-execution - " + gridParent.attr("class"));
-		console.log("gridIndexToParent: " + gridIndexToParent + " child class: " + gridParent.children().attr("class"));
+		console.log("gridIndexToParent: " + gridIndexToParent + " child class: " + gridParent.children().eq(auxIndex).attr("class"));
 		console.log("inputs found: "+inputsCounts);
 
 		//Find last input before the grid
