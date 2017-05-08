@@ -65,7 +65,7 @@ function setTabEvent(){
 
 		while (inputsCounts == 0 && !gridParent.hasClass("ui-bizagi-wp-project-plan-content-dashboard")){
 			//moving up in the hierachy tree
-			if(gridIndexToParent > 0 && inputsCounts == 0){
+			if(gridIndexToParent > 0){
 				var auxIndex;
 				for (auxIndex = gridIndexToParent-1; auxIndex >= 0 && inputsCounts == 0 ; auxIndex--){
 					inputs =  gridParent.children().eq(auxIndex).find("input");
@@ -79,7 +79,7 @@ function setTabEvent(){
 					}
 				}
 				console.log("auxIndex out: " + auxIndex);
-			}else if ( gridIndexToParent == 0 && inputsCounts == 0){
+			}else{
 				console.log("moving up in tree");
 				grid = gridParent;
 				gridParent = grid.parent();
