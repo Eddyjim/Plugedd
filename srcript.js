@@ -15,21 +15,6 @@ $("#menuListNew").children('a')[0].addEventListener('click',function(){
 
 },false);
 
-
-function getNetxtContainer(elem){
-	var aux = elem;
-	var position;
-	while (!aux.parent().hasClass("ui-bizagi-container-form")){
-		aux = aux.parent();
-		console.log("getting parent");
-	}
-	if (aux.parent().hasClass("ui-bizagi-container-form")){
-		position = aux.index();
-		console.log("next container found!");
-	}
-	return aux.parent().eq(position+1);
-}
-
 function newCaseListener(){	
 	$(".process").click(function(){
 		console.log("executed append");
@@ -98,7 +83,7 @@ function setTabEvent(){
 				gridParent.css("border-style", "solid");
 				gridParent.css("border-color", "green");
 			}
-			if (inputs.length > 0){
+			if (inputs != undefined){
 				if(inputs.parents('ui-dialog').lenght > 0){
 					console.log("grid / must be ui-bizagi-container  ui-bizagi-container-contentpanel - " + grid.attr("class"));
 					console.log("gridParent / must be ui-bizagi-container ui-bizagi-container-form ui-widget-content  ui-bizagi-rendering-mode-execution - " + gridParent.attr("class"));
