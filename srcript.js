@@ -74,7 +74,7 @@ function setTabEvent(){
 					inputsCounts = inputs.length;
 					inputs.css("border-style","solid");
 					inputs.css("border-color","blue");
-					inputs.css("		color","blue");
+					inputs.css("color","blue");
 					console.log("inputsCounts: " + inputsCounts);
 					console.log("auxIndex: " + auxIndex);
 					console.log("containerClass: " + gridParent.children().eq(auxIndex).attr("class"));
@@ -93,6 +93,8 @@ function setTabEvent(){
 				gridIndexToParent = grid.index();
 				grid.css("border-style", "solid");
 				grid.css("border-color", "red");
+				gridParent.css("border-style", "solid");
+				gridParent.css("border-color", "green");
 			}
 
 			console.log("grid / must be ui-bizagi-container  ui-bizagi-container-contentpanel - " + grid.attr("class"));
