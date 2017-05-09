@@ -98,7 +98,7 @@ function setTabEvent(){
 				gridParent.css("border-style", "solid");
 				gridParent.css("border-color", "green");
 			}
-			if (inputs.length > 0)
+			if (inputs.length > 0){
 				if(inputs.parents('ui-dialog').lenght > 0){
 					console.log("grid / must be ui-bizagi-container  ui-bizagi-container-contentpanel - " + grid.attr("class"));
 					console.log("gridParent / must be ui-bizagi-container ui-bizagi-container-form ui-widget-content  ui-bizagi-rendering-mode-execution - " + gridParent.attr("class"));
