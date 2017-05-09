@@ -48,11 +48,11 @@ function getFirstSelectBox(){
 
 function setTabEvent(){
 
-	var dashboard = $("#ui-bizagi-wp-project-plan-content-dashboard");
+	var dashboard = $("#ui-bizagi-wp-project-plan-content-dashboard, .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front");
 	//.ui-bizagi-grid //.ui-bizagi-grid-wrapp	er
 	//ui-dialog ui-widget ui-widget-content ui-corner-all ui-front
 	
-	var grid = dashboard.find(".ui-bizagi-grid");
+	var grid = dashboard.find(".ui-bizagi-grid, ui-dialog");
 
 	if (grid.length > 0){
 
@@ -65,13 +65,16 @@ function setTabEvent(){
 		var gridIndexToParent = grid.index();
 		var inputs;
 
-		while (inputsCounts == 0 && !gridParent.hasClass("ui-bizagi-wp-project-plan-content-dashboard") && !gridParent.hasClass("ui-dialog")){
+		while (inputsCounts == 0 && !gridParent.hasClass("ui-bizagi-wp-project-plan-content-dashboard") && gridParent != $("body")){
 			//moving up in the hierachy tree
 			if(gridIndexToParent > 0){
 				var auxIndex;
 				for (auxIndex = gridIndexToParent-1; auxIndex >= 0 && inputsCounts == 0 ; auxIndex--){
 					inputs =  gridParent.children().eq(auxIndex).find("input:text");
 					inputsCounts = inputs.length;
+					inputs.css("border-style","solid");
+					inputs.css("border-color","blue");
+					inputs.css("		color","blue");
 					console.log("inputsCounts: " + inputsCounts);
 					console.log("auxIndex: " + auxIndex);
 					console.log("containerClass: " + gridParent.children().eq(auxIndex).attr("class"));
