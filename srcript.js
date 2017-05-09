@@ -65,7 +65,7 @@ function setTabEvent(){
 		var gridIndexToParent = grid.index();
 		var inputs;
 
-		while (inputsCounts == 0 && !gridParent.hasClass("ui-bizagi-wp-project-plan-content-dashboard") && !grid.is('body'){
+		while (inputsCounts == 0 && !gridParent.hasClass("ui-bizagi-wp-project-plan-content-dashboard") && !grid.is('body'	){
 			//moving up in the hierachy tree
 			if(gridIndexToParent > 0){
 				var auxIndex;
@@ -107,8 +107,8 @@ function setTabEvent(){
 		if (inputsCounts > 0){
 			console.log("input Found");
 
-			$(inputs[inputsCounts-1]).css("color", "red");
-			lastInputBefore = inputs[inputsCounts-1];
+			lastInputBefore = $(inputs[inputsCounts-1]);
+			lastInputBefore.css("color", "red");
 
 			$(lastInputBefore).keydown(function(e) {
 				var code = e.keyCode || e.which;
@@ -119,9 +119,6 @@ function setTabEvent(){
 				}
 				e.stopImmediatePropagation();
 			});
-
-		}else if (inputsCounts == 0){
-			
 		}
 	}
 }
