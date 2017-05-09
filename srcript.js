@@ -64,7 +64,7 @@ function setTabEvent(){
 		var gridIndexToParent = grid.index();
 		var inputs;
 
-		while (inputsCounts == 0 && !gridParent.hasClass("ui-bizagi-wp-project-plan-content-dashboard") && !grid.is('body')){
+		while (inputsCounts == 0 && !gridParent.hasClass("ui-bizagi-wp-project-plan-content-dashboard") && !grid.hasClass('ui-dialog')){
 			//moving up in the hierachy tree
 			if(gridIndexToParent > 0){
 				var auxIndex;
@@ -74,9 +74,11 @@ function setTabEvent(){
 					inputs.css("border-style","solid");
 					inputs.css("border-color","blue");
 					inputs.css("color","blue");
-					console.log("inputsCounts: " + inputsCounts);
-					console.log("auxIndex: " + auxIndex);
-					console.log("containerClass: " + gridParent.children().eq(auxIndex).attr("class"));
+					if(inputs.parents('ui-dialog').lenght > 0){
+						console.log("inputsCounts: " + inputsCounts);
+						console.log("auxIndex: " + auxIndex);
+						console.log("containerClass: " + gridParent.children().eq(auxIndex).attr("class"));
+					}
 					if (inputsCounts > 0 ){
 						inputFoundIndexToParent = auxIndex;
 						console.log("inputFoundIndexToParent: " + inputFoundIndexToParent);
@@ -104,8 +106,9 @@ function setTabEvent(){
 		
 		//Find last input before the grid
 		if (inputsCounts > 0){
-			console.log("input Found");
-
+			if(inputs.parents('ui-dialog').lenght > 0){
+				console.log("input Found");
+			}
 			lastInputBefore = $(inputs[inputsCounts-1]);
 			lastInputBefore = inputs[inputsCounts-1];
 
