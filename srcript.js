@@ -39,7 +39,7 @@ function setTabEvent(){
 		var inputs;
 
 		//While there is no input:text in the children elements of the parent, move up
-		while (inputsCounts == 0 && !gridParent.hasClass('ui-bizagi-wp-project-plan-content-dashboard') && !grid.hasClass('ui-dialog')){
+		while (inputsCounts == 0 && !gridParent.hasClass('ui-bizagi-wp-project-plan-content-dashboard') ){
 			if(gridIndexToParent > 0){
 				var auxIndex; 
 				//Iterate over all the children elements of the relative parent of the grid where the relative position is first than the grid
@@ -51,6 +51,7 @@ function setTabEvent(){
 						inputFoundIndexToParent = auxIndex; //Get the index of the previous child element that contains an input:text within the grid parent element 
 						inputs.css("border-style","solid");
 						inputs.css("border-color","red");
+						alert("inputFound");
 					}
 				}
 			}
