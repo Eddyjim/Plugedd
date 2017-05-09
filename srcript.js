@@ -1,7 +1,5 @@
 var path = 'https://raw.github.com/Eddyjim/Plugbot/master/';
 
-console.log(path);
-
 $.fn.exists = function () {
     return this.length !== 0;
 }
@@ -54,7 +52,6 @@ function setTabEvent(){
 					
 					if (inputsCounts > 0 ){
 						inputFoundIndexToParent = auxIndex;
-						
 					}
 				}
 			}
