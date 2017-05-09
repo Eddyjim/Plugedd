@@ -98,11 +98,13 @@ function setTabEvent(){
 				gridParent.css("border-style", "solid");
 				gridParent.css("border-color", "green");
 			}
-			if(inputs.parents('ui-dialog').lenght > 0){
-				console.log("grid / must be ui-bizagi-container  ui-bizagi-container-contentpanel - " + grid.attr("class"));
-				console.log("gridParent / must be ui-bizagi-container ui-bizagi-container-form ui-widget-content  ui-bizagi-rendering-mode-execution - " + gridParent.attr("class"));
-				console.log("gridIndexToParent: " + gridIndexToParent + " child class: " + gridParent.children().eq(gridIndexToParent).attr("class"));
-				console.log("inputs found: "+inputsCounts);
+			if (inputs.length > 0)
+				if(inputs.parents('ui-dialog').lenght > 0){
+					console.log("grid / must be ui-bizagi-container  ui-bizagi-container-contentpanel - " + grid.attr("class"));
+					console.log("gridParent / must be ui-bizagi-container ui-bizagi-container-form ui-widget-content  ui-bizagi-rendering-mode-execution - " + gridParent.attr("class"));
+					console.log("gridIndexToParent: " + gridIndexToParent + " child class: " + gridParent.children().eq(gridIndexToParent).attr("class"));
+					console.log("inputs found: "+inputsCounts);
+				}
 			}
 		}
 		
