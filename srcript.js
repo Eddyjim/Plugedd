@@ -10,7 +10,6 @@ $("#menuListNew").children('a')[0].addEventListener('click',function(){
 
 	$(document).ajaxComplete(function() {
 		newCaseListener();
-		console.log("ajax call");
 	});
 
 },false);
@@ -24,7 +23,6 @@ function newCaseListener(){
 
 function getFirstSelectBox(){
 	$(document).ajaxComplete( function() {
-		console.log("Ajax executed 2");
 		$($($("#ui-bizagi-wp-project-plan-content-dashboard")[0]).find(".ui-bizagi-container-form").find("input")[0]).trigger("click");
 		setTabEvent();
 	});
@@ -40,8 +38,6 @@ function setTabEvent(){
 
 	if (grid.length > 0){
 
-		console.log("found grid" + grid);
-		grid.css("color", "green");
 		var gridParent = grid.parent();
 		var lastInputBefore;
 		var inputFoundIndexToParent;
@@ -75,6 +71,8 @@ function setTabEvent(){
 			
 			if (inputsCounts == 0){
 				console.log("moving up in tree");
+				grid.css("border-style", "solid");
+				grid.css("border-color", "yellow");
 				grid = gridParent;
 				gridParent = grid.parent();
 				gridIndexToParent = grid.index();
@@ -113,25 +111,6 @@ function setTabEvent(){
 
 		}
 	}
-}
-
-function clickOnField(){
-
-	var fields = document.getElementsByClassName("ui-selectmenu-value");
-
-	if (undefined !== fields[0]){
-		fields[0].click();
-	}
-
-	$(fields[0]).keydown(function(e) {
-	   console.log('keyup called');
-	   var code = e.keyCode || e.which;
-	   if (code == '9') {
-		 tabToAddInTable();
-		 alert('Tab pressed');
-	   return false;
-	   }
-	});
 }
 
 function tabToAddInTable(){
