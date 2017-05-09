@@ -43,15 +43,12 @@ function setTabEvent(){
 			if(gridIndexToParent > 0){
 				var auxIndex; 
 				//Iterate over all the children elements of the relative parent of the grid where the relative position is first than the grid
-				for (auxIndex = gridIndexToParent-1; auxIndex >= 0 && inputsCounts == 0 ; auxIndex--){
+				for (auxIndex = gridIndexToParent; auxIndex >= 0 && inputsCounts == 0 ; auxIndex--){
 					inputs =  gridParent.children().eq(auxIndex).find('input:text'); //Find all input:text in the parents
 					inputsCounts = inputs.length;
 					
 					if (inputsCounts > 0 ){
-						inputFoundIndexToParent = auxIndex; //Get the index of the previous child element that contains an input:text within the grid parent element 
-						inputs.css("border-style","solid");
-						inputs.css("border-color","red");
-						alert("inputFound");
+						inputFoundIndexToParent = auxIndex; //Get the index of the previous child element that contains an input:text within the grid parent element
 					}
 				}
 			}
