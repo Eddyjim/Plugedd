@@ -1,7 +1,6 @@
 var path = 'https://raw.github.com/Eddyjim/Plugbot/master/';
 
 console.log(path);
-tabToAddInTable();
 
 $.fn.exists = function () {
     return this.length !== 0;
@@ -108,7 +107,7 @@ function setTabEvent(){
 			console.log("input Found");
 
 			lastInputBefore = $(inputs[inputsCounts-1]);
-			lastInputBefore.css("color", "red");
+			lastInputBefore = inputs[inputsCounts-1];
 
 			$(lastInputBefore).keydown(function(e) {
 				var code = e.keyCode || e.which;
@@ -119,6 +118,7 @@ function setTabEvent(){
 				}
 				e.stopImmediatePropagation();
 			});
+
 		}
 	}
 }
