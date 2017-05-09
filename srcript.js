@@ -48,11 +48,11 @@ function getFirstSelectBox(){
 
 function setTabEvent(){
 
-	var dashboard = $("#ui-bizagi-wp-project-plan-content-dashboard, .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front");
+	var dashboard = $("#ui-bizagi-wp-project-plan-content-dashboard, .ui-dialog");
 	//.ui-bizagi-grid //.ui-bizagi-grid-wrapp	er
 	//ui-dialog ui-widget ui-widget-content ui-corner-all ui-front
 	
-	var grid = dashboard.find(".ui-bizagi-grid, ui-dialog");
+	var grid = dashboard.find(".ui-bizagi-grid");
 
 	if (grid.length > 0){
 
@@ -65,7 +65,7 @@ function setTabEvent(){
 		var gridIndexToParent = grid.index();
 		var inputs;
 
-		while (inputsCounts == 0 && !gridParent.hasClass("ui-bizagi-wp-project-plan-content-dashboard") && gridParent != $("body")){
+		while (inputsCounts == 0 && !gridParent.hasClass("ui-bizagi-wp-project-plan-content-dashboard") && !gridParent.is("body")){
 			//moving up in the hierachy tree
 			if(gridIndexToParent > 0){
 				var auxIndex;
