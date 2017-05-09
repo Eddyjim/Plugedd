@@ -81,10 +81,11 @@ function setTabEvent(){
 					}
 					if (inputsCounts > 0 ){
 						inputFoundIndexToParent = auxIndex;
+						if(inputs.parents('ui-dialog').lenght > 0){
 						console.log("inputFoundIndexToParent: " + inputFoundIndexToParent);
+						}
 					}
 				}
-				console.log("auxIndex out: " + auxIndex);
 			}
 			
 			if (inputsCounts == 0){
